@@ -1,0 +1,21 @@
+name: Run nbval Tests
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  nbtest:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+    - name: Install dependencies
+      id: make_install
+      run: |
+        make install
+    - run: pytest --nbval stats.ipynb

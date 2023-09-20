@@ -1,0 +1,28 @@
+name: Generate Markdown and Commit
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+    - name: Install dependencies
+      id: make_install
+      run: |
+        make install
+    - run: python3 markdownGenerater.py
+    - name: Commit and push if there are changes
+      run: |
+        git config --global user.email "nicholas.conterno@duke.edu"
+        git config --global user.name "nicholasconterno"
+        git add generated_markdown.md histogram.png
+        git commit -m "Add generated markdown and histogram" || echo "No changes to commit"
+        git push
