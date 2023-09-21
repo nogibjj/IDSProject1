@@ -1,7 +1,7 @@
 # IDS Project 1
 
 Data visualization using pandas.\
-[Video Description!](https://youtu.be/uTRUNXvorwQ)\
+[Video Description!]([https://youtu.be/uTRUNXvorwQ](https://www.youtube.com/watch?v=KiUfJfgP56Y))\
 [![Python package](https://github.com/nicholasconterno/IDSProject1/actions/workflows/python-package.yml/badge.svg)](https://github.com/nicholasconterno/IDSProject1/actions/workflows/python-package.yml)
 
 ### Makefile Command Status
